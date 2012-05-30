@@ -131,21 +131,27 @@ somewhere with member variables: url, id, and name.
 # Install
 
 To install this, install cocoapods:
+
     gem install cocoapods
     pod setup
     
 And I like to be able to search for pods from the command line. If you would too (though not necessary), add:
+
     brew install appledoc --HEAD
     ln -sf "`brew --prefix`/Cellar/appledoc/HEAD/Templates" ~/Library/Application\ Support/appledoc
     
 Now install motion-cocoapods
+
     gem install motion-cocoapods
     
 Now add these two lines under the existing require in your rakefile:
+```ruby
     require 'rubygems'
     require 'motion-cocoapods'
+```
     
 And add these lines:
+```ruby
     Motion::Project::App.setup do |app|
       # stuff
       app.pods do
@@ -156,17 +162,21 @@ And add these lines:
         dependency 'RestKit/ObjectMapping/CoreData'
       end
     end
+```
 
 Finally, from within your projects root directory (assuming you've initialized a git repo here) do:
+
     git submodule add git@github.com:pachun/Rest-In-Motion.git ./app/rim
     rake
 
 You should also modify your .gitignore to ignore the restkit build files so you're not pushing and pulling an 
 extra library every time you make a commit. Add this line to your .gitignore:
+
     vendor/
     
 On a side note, if you push your project to your own repo and then pull it later on, you will have to reinitialize 
 Rest In Motion like so:
+
     git pull git://yourrepohere.git
     cd ./yourrepohere
     git submodule init
