@@ -18,7 +18,7 @@ class ObjectMapping
           if @sub_mappings.has_key? leaf
             result[leaf] << @sub_mappings[leaf].serialize( item.instance_variable_get("@#{leaf}")[leaf_item] )
           else
-            result[leaf] << leaf_item
+            result[leaf] << item.instance_variable_get("@#{leaf}")[leaf_item]
           end
         end
 
