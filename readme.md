@@ -42,10 +42,10 @@ class RegularRequestExampleViewController < UIViewController
   def driver
   
     # use .instance to get ahold of the request god you initialized in your app delegate
-    @request_god = RequestGod.instance
+    request_god = RequestGod.instance
     
     # use .RegularRequest to spawn a simple HTTP Get, Post, etc. Pass in the resource path, method, and callback delegate
-    login_request = @request_god.RegularRequest('/tokens.json', method:POST, delegate:self)
+    login_request = request_god.RegularRequest('/tokens.json', method:POST, delegate:self)
     
     # optionally, you can add post/put parameters
     login_request.params = { "email" => "n0x10s.gas@gmail.com", "password" => "password" }
