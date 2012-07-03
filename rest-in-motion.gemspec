@@ -6,6 +6,6 @@ Gem::Specification.new do |s|
   s.description = 'See the summary..'
   s.authors     = ['Nick Pachulski']
   s.email       = 'hello@nickpachulski.com'
-  s.files       = ['lib/RestInMotion']
+  s.files       = ['lib/rest-in-motion']
   s.homepage    = 'http://nickpachulski.com/'
 end
