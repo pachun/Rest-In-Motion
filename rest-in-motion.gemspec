@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'rest-in-motion'
-  s.version     = '0.0.1'
+  s.version     = '0.0.3'
   s.date        = '2012-06-23'
   s.summary     = 'Object mapping layer atop RestKit\'s RKClient.'
   s.description = 'See the summary..'
